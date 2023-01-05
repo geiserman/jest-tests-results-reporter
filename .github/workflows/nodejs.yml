@@ -58,7 +58,11 @@ jobs:
         asset_path: package.tgz
         asset_name: package.tgz
         asset_content_type: application/tgz
-    - name: Publishing package
+    - name: Publishing package CI
+      run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.REPO_TOKEN}}
+    - name: Publishing package to github packages
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.REPO_TOKEN}}
