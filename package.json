@@ -1,6 +1,6 @@
 {
   "name": "@geiserman/jest-tests-results-reporter",
-  "version": "2.4.21",
+  "version": "2.4.22",
   "description": "jest html reporter (results processor) to view HTML jest results, save raw JSON, and invoke multiple reporters",
   "license": "MIT",
   "repository": "https://github.com/geiserman/jest-tests-results-reporter",
@@ -41,6 +41,9 @@
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "prebuild": "npm run clean && npm run lint && echo Using TypeScript && tsc --version",
     "build": "tsc --pretty && browserify lib/render/view.js -o lib/render/view.js",
+    "prepack": "yarn build",
+    "prepack2": "yarn install --frozen-lockfile",
+    "prepack22": "yarn pack --filename=package.tgz",
     "test": "jest",
     "example": "npm run build && jest --testRegex __tests__.*\\.example\\.ts$",
     "examplePassing": "npm run build && jest --testRegex __tests__.*\\.example\\.ts$ Passing",
