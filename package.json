@@ -35,7 +35,6 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "publish:alpha-npmjs": "git commit --allow-empty -m \"chore(): alpha npmjs\" && git push",
     "publish:alpha-github": "git commit --allow-empty -m \"chore(): alpha github\" && git push",
     "clean": "rimraf lib && rimraf coverage",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
